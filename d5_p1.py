@@ -71,7 +71,7 @@ for code in passes:
         return (lower, new_upper)  # 32, 47
 
     for letter in row:
-        print(pair)
+        #print(pair)
 
         if letter == 'F':
             pair = lower(pair)
@@ -79,7 +79,7 @@ for code in passes:
         if letter == 'B':
             pair = upper(pair)
 
-        print(f"{letter} - lower: {pair[0]} upper: {pair[1]}  ")
+        #print(f"{letter} - lower: {pair[0]} upper: {pair[1]}  ")
 
 
     if pair[0] == pair[1]:
@@ -89,21 +89,21 @@ for code in passes:
         sys.exit(1)
 
 
-    print("check seat pairs")
+    #print("check seat pairs")
     pair = 0, 7
 
     for letter in col:
 
-        print(pair)
+        #print(pair)
 
         if pair[0] == (pair[1] - 1):
             if letter == 'R':
                 pair = (pair[1], pair[1])
-                print('breaking due to right seat match')
+                #print('breaking due to right seat match')
                 break
             if letter == 'L':
                 pair = (pair[0], pair[0])
-                print('breaking due to Left seat match')
+                #print('breaking due to Left seat match')
                 break
 
         if letter == 'R':
@@ -112,7 +112,7 @@ for code in passes:
         if letter == 'L':
             pair = seat_lower(pair)
 
-        print(f"{letter} - lower: {pair[0]} upper: {pair[1]}  ")
+        #print(f"{letter} - lower: {pair[0]} upper: {pair[1]}  ")
 
     if pair[0] == pair[1]:
         seat = pair[0]
@@ -125,5 +125,6 @@ for code in passes:
     if id > max:
         max = id
 
-    print(f"row {row}, col {seat}, seat ID: {id}")
-    print(f"max: {max}")
+    #print(f"row {row}, col {seat}, seat ID: {id}")
+    print(f"{row}, {seat}, {id}")
+    #print(f"max: {max}")
